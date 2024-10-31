@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "781963799876",
+    "project_id": "testauthentication-99042",
+    "storage_bucket": "testauthentication-99042.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781963799876:android:025768551b32003cd0fb11",
+        "android_client_info": {
+          "package_name": "com.test.sniptcode"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2LG8J_tC27z96lX4hJvxbZBv_1-tkKX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

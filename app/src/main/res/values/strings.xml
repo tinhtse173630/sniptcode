@@ -1,0 +1,116 @@
+<resources>
+    <string name="app_name">Huong Dan</string>
+    <string name="client_id">781963799876-72n9peu0p5vgkpp2rb56nlrss6hsde9p.apps.googleusercontent.com</string>
+
+    <!-- Authentication Activity -->
+    <string name="authentication_title">    Cổng thông tin quản lí sách và tác giả  </string>
+    <string name="authentication_subtitle"> Vui Lòng điền thông tin Đăng nhập vào hệ thống   </string>
+    <string name="button_authentication_register"> Đăng Kí </string>
+    <string name="button_authentication_login"> Đăng nhập </string>
+
+
+    <!-- Main Activity-->
+    <string name="title">Thông Tin Sách </string>
+    <string name="subtitle">Vui Lòng Điền Thông Tin Để Thêm mới Sách !</string>
+
+    <string name="layout1_tv">          Tên Sách            </string>
+    <string name="layout1_edtext_hint"> tên sách            </string>
+
+    <string name="layout2_tv">          Ngày Xuất Bản Sách  </string>
+    <string name="layout2_edtext_hint"> ngày XB             </string>
+
+    <string name="layout3_tv">          Thể Loại Sách       </string>
+    <string name="layout3_edtext_hint"> thể loại            </string>
+
+    <string name="layout4_tv">          Mã ID Tác giả       </string>
+    <string name="layout4_edtext_hint"> id tác giả          </string>
+
+    <string name="layout5_tv">          Tên Tác Giả         </string>
+    <string name="layout5_edtext_hint"> tên                 </string>
+
+    <string name="layout6_tv">          Email Tác Giả       </string>
+    <string name="layout6_edtext_hint"> Email               </string>
+
+    <string name="layout7_tv">          Địa Chỉ Tác Giả     </string>
+    <string name="layout7_edtext_hint"> địa chỉ             </string>
+
+    <string name="layout8_tv">          Điện Thoại          </string>
+    <string name="layout8_edtext_hint"> sdt                 </string>
+
+
+    <string name="button_save">     Lấy Data        </string>
+    <string name="button_getdata">  Danh sách Sách </string>
+    <string name="button_getdata2">  Danh sách Tác Giả </string>
+
+    <!-- List View Activity-->
+
+    <string name="info">Thông Tin</string>
+
+    <string name="title_list">Thông Tin Sách</string>
+    <string name="subtitle_list">Quản Lí Và Cập Nhật Thông Tin Sách !</string>
+    <string name="title_list2">Thông Tin Tác Giả</string>
+    <string name="subtitle_list2">Quản Lí Và Cập Nhật Thông Tin Tác Giả !</string>
+
+    <string name="edText1_list_text">       ID Sách:        </string>
+    <string name="edText1_list_subtext">    None            </string>
+
+    <string name="edText2_list_text">       Ngày XB:        </string>
+    <string name="edText2_list_subtext">    None            </string>
+
+    <string name="edText3_list_text">       Thể Loại:       </string>
+    <string name="edText3_list_subtext">    None            </string>
+
+    <string name="edText4_list_text">       Tên Sách:       </string>
+    <string name="edText4_list_subtext">    Tên Sách        </string>
+
+    <!---->
+    <string name="edText5_list2_text">       ID Tác giả:     </string>
+    <string name="edText5_list2_subtext">    None            </string>
+
+    <string name="edText6_list2_text">       Điện Thoại:     </string>
+    <string name="edText6_list2_subtext">    None            </string>
+
+    <string name="edText7_list2_text">       Email:          </string>
+    <string name="edText7_list2_subtext">    None            </string>
+
+    <string name="edText8_list2_text">       Địa chỉ:        </string>
+    <string name="edText8_list2_subtext">    None            </string>
+
+    <string name="edText9_list2_text">       Tên Tác Giả:    </string>
+    <string name="edText9_list2_subtext">    Tên tác giả     </string>
+
+    <string name="button_edit">     Sửa dữ liệu </string>
+    <string name="button_remove">   xóa dữ liệu </string>
+    <string name="button_map">      Mở Bản Đồ   </string>
+    <string name="button_return">   Quay Lại    </string>
+
+    <!-- Small Item Activity-->
+
+    <string name="tvText1_small_text">      ID Sach:        </string>
+    <string name="edText1_small_subtext">   ID              </string>
+
+    <string name="tvText2_small_text">      Ngày XB:        </string>
+    <string name="edText2_small_subtext">   Text            </string>
+
+    <string name="tvText3_small_text">      Thể Loại:       </string>
+    <string name="edText3_small_subtext">   Text            </string>
+
+    <!--    <string name="tvText4_small_text">      Tên Sách:       </string>-->
+    <string name="edText4_small_subtext">   Text            </string>
+
+    <string name="tvText5_small_text">      ID Tác giả:     </string>
+    <string name="edText5_small_subtext">   Text            </string>
+
+    <string name="tvText6_small_text">      Điện Thoại:     </string>
+    <string name="edText6_small_subtext">   Text            </string>
+
+    <string name="tvText7_small_text">      Email:          </string>
+    <string name="edText7_small_subtext">   Text            </string>
+
+    <string name="tvText8_small_text">      Địa Chỉ:        </string>
+    <string name="edText8_small_subtext">   Text            </string>
+
+    <!--    <string name="tvText9_small_text">      Tên Tác Giả:    </string>-->
+    <string name="edText9_small_subtext">   Text            </string>
+
+</resources>
