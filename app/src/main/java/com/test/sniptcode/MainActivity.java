@@ -104,66 +104,94 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onPointerCaptureChanged(hasCapture);
     }
 
-    // Method to save the trainee data
+    // Method to save the Model data
     private void save() {
-        // Get input values from the fields
-        String nameBook     = edtext1.getText().toString();
-        String datePublish  = edtext2.getText().toString();
-        String catagoryBook = edtext3.getText().toString();
-        String idAuthor     = edtext4.getText().toString();
+        // Get input values for Model_1
+        String nameBook = edtext1.getText().toString();
+        String datePublish = edtext2.getText().toString();
+        String categoryBook = edtext3.getText().toString();
+        String idAuthor = edtext4.getText().toString();
 
-        Model_1 model_1 = new Model_1(nameBook, datePublish, catagoryBook, idAuthor); // Create a new trainee object with the input values
+        // Check if Model_1 fields are filled
+        boolean isModel1Filled = !nameBook.isEmpty() && !datePublish.isEmpty() && !categoryBook.isEmpty() && !idAuthor.isEmpty();
 
-        try {
-            // API call to create a new trainee
-            Call<Model_1> call = model_1Service.createModel_1s(model_1);
-            call.enqueue(new Callback<Model_1>() {
-                @Override
-                public void onResponse(Call<Model_1> call, Response<Model_1> response) {
-                    if (response.body() != null) {
-                        Toast.makeText(MainActivity.this, "Save successfully !", Toast.LENGTH_LONG).show();
-                        clearFields(); // Clear the input fields after saving
+        // Get input values for Model_2
+        String nameAuthor = edtext5.getText().toString();
+        String email = edtext6.getText().toString();
+        String address = edtext7.getText().toString();
+        String phone = edtext8.getText().toString();
+
+        // Check if Model_2 fields are filled
+        boolean isModel2Filled = !nameAuthor.isEmpty() && !email.isEmpty() && !address.isEmpty() && !phone.isEmpty();
+
+        // Flags to track if both models are saved
+        final boolean[] model1Saved = {false};
+        final boolean[] model2Saved = {false};
+
+        // Save Model_1 if filled
+        if (isModel1Filled) {
+            Model_1 model_1 = new Model_1(nameBook, datePublish, categoryBook, idAuthor);
+
+            try {
+                Call<Model_1> call = model_1Service.createModel_1s(model_1);
+                call.enqueue(new Callback<Model_1>() {
+                    @Override
+                    public void onResponse(Call<Model_1> call, Response<Model_1> response) {
+                        if (response.body() != null) {
+                            model1Saved[0] = true;
+                            if (model1Saved[0] && model2Saved[0]) {
+                                Toast.makeText(MainActivity.this, "Lưu dữ liệu sách và tác giả thành công", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(MainActivity.this, "Lưu Sách Thành Công!", Toast.LENGTH_LONG).show();
+                            }
+                            clearFields();
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<Model_1> call, Throwable t) {
-                    Toast.makeText(MainActivity.this, "Save fail !", Toast.LENGTH_LONG).show();
-                }
-            });
-        } catch (Exception ex) {
-            Log.d("Loi", ex.getMessage());
+                    @Override
+                    public void onFailure(Call<Model_1> call, Throwable t) {
+                        Toast.makeText(MainActivity.this, "Lưu Sách Thất Bại!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            } catch (Exception ex) {
+                Log.d("Lỗi", ex.getMessage());
+            }
         }
 
-        // Get input values from the fields
-        String nameAuthor    = edtext5.getText().toString();
-        String email         = edtext6.getText().toString();
-        String address       = edtext7.getText().toString();
-        String phone         = edtext8.getText().toString();
+        // Save Model_2 if filled
+        if (isModel2Filled) {
+            Model_2 model_2 = new Model_2(nameAuthor, email, address, phone);
 
-        Model_2 model_2 = new Model_2(nameAuthor,email,address,phone); // Create a new trainee object with the input values
-
-        try {
-            // API call to create a new trainee
-            Call<Model_2> call = model_2Service.createModel_2s(model_2);
-            call.enqueue(new Callback<Model_2>() {
-                @Override
-                public void onResponse(Call<Model_2> call, Response<Model_2> response) {
-                    if(response.body() != null) {
-                        Toast.makeText(MainActivity.this, "Save successfully !", Toast.LENGTH_LONG).show();
-                        clearFields(); // Clear the input fields after saving
+            try {
+                Call<Model_2> call = model_2Service.createModel_2s(model_2);
+                call.enqueue(new Callback<Model_2>() {
+                    @Override
+                    public void onResponse(Call<Model_2> call, Response<Model_2> response) {
+                        if (response.body() != null) {
+                            model2Saved[0] = true;
+                            if (model1Saved[0] && model2Saved[0]) {
+                                Toast.makeText(MainActivity.this, "Lưu dữ liệu sách và tác giả thành công", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(MainActivity.this, "Lưu Tác Giả Thành Công!", Toast.LENGTH_LONG).show();
+                            }
+                            clearFields();
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<Model_2> call, Throwable t) {
-                    Toast.makeText(MainActivity.this, "Save fail !", Toast.LENGTH_LONG).show();
-                }
-            });
-        } catch (Exception ex) {
-            Log.d("Loi", ex.getMessage());
+                    @Override
+                    public void onFailure(Call<Model_2> call, Throwable t) {
+                        Toast.makeText(MainActivity.this, "Lưu Tác Giả Thất Bại!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            } catch (Exception ex) {
+                Log.d("Lỗi", ex.getMessage());
+            }
         }
 
+        // Show a message if no data was entered for either model
+        if (!isModel1Filled && !isModel2Filled) {
+            Toast.makeText(this, "Vui lòng nhập dữ liệu", Toast.LENGTH_SHORT).show();
+        }
     }
 
     // Clear the input fields after saving or returning to the main screen
